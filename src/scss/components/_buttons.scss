@@ -1,0 +1,26 @@
+.button{
+  min-height: 45px;
+  display: inline-flex;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.9px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 55px;
+  min-width: 180px;
+  text-transform: uppercase;
+
+  span{
+    position: relative;
+    @include animated-underline;
+  }
+
+  &:hover{
+    span{
+      @include animated-underline-hover;
+    }
+  }
+}

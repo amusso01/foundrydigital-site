@@ -1,0 +1,79 @@
+// =============== RESPONSIVE ================
+
+$breakpoints:(
+  'phone': 640px,
+  'phone-land': 920px,
+  'tablet': 1140px,
+  'desktop': 1360px,
+  'wideScreen': 1490px
+  ) !default;
+  
+  @import './../vendors/include-media.scss';
+  // EXAMPLE
+  // @include media(">phone", "<=tablet") {
+    //   width: 50%;
+    //   }
+
+
+// Colours
+
+$grey: #c6c6c6;
+$light-grey: #f8f8f8;
+$dark-blue: #202431;
+$p-black: #212531;
+$h-black: #1a1c22;
+
+// Gradients
+$gradient-1: #ff9500;
+$gradient-2: #ff7100;
+$gradient-3: #ff1700;
+$gradient-4: #ff0000;
+
+$orange-gradient: $gradient-1, $gradient-2, $gradient-3, $gradient-4;
+
+$gradient-5: #d61e45;
+$gradient-6: #b22264;
+$gradient-7: #8c2786;
+
+$purple-gradient: $gradient-5, $gradient-6, $gradient-7;
+
+$gradient-8: #31c4f3;
+$gradient-9: #34c4ec;
+$gradient-10: #5fc192;
+$gradient-11: #70c06e;
+
+$green-gradient: $gradient-8, $gradient-9, $gradient-10, $gradient-11;
+
+$line-gradient: $gradient-1, $gradient-2, $gradient-3, $gradient-4, $gradient-5,
+  $gradient-6, $gradient-7, $gradient-8, $gradient-9, $gradient-10, $gradient-11;
+
+
+// animated underline
+@mixin animated-underline() {
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: 0px;
+		left: 0;
+		background-color: currentColor;
+		visibility: hidden;
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+		transition: all .3s ease-in-out;
+	}
+}
+@mixin animated-underline-hover() {
+	&::before {
+		visibility: visible;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
